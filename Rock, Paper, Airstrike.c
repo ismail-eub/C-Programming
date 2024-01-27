@@ -1,36 +1,44 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-    char str1[8], str2[8];
-    int i,n;
-    scanf("%d",&n);
+    int temp;
+    scanf("%d", &temp);
 
-    for( i=0; i<n; i++)
+    char A[10], B[10];
+
+    while (scanf("%s %s", A, B) != EOF)
     {
-        scanf("%s %s",&str1, &str2);
-
-        if(   strcmp(str1, "ataque")==0 && strcmp(str2, "pedra")==0 ||   strcmp(str1, "pedra")==0 && strcmp(str2,"papel")==0 ||  strcmp(str1, "papel")==0 && strcmp(str2,"ataque")==0 )
-            printf("Jogador 1 venceu\n");
-
-        else if( strcmp(str1, "papel")==0 && strcmp(str2,"papel")==0 )
-            printf("Ambos venceram\n");
-
-        else if( strcmp(str1, "pedra")==0 && strcmp(str2,"pedra")==0 )
-            printf("Sem ganhador\n");
-
-        else  if( strcmp(str1, "ataque")==0 && strcmp(str2,"ataque")==0 )
+        if (strcmp(A, "ataque") == 0 && strcmp(B, "ataque") == 0)
+        {
             printf("Aniquilacao mutua\n");
-
-        else
+        }
+        else if (strcmp(A, "pedra") == 0 && strcmp(B, "pedra") == 0)
+        {
+            printf("Sem ganhador\n");
+        }
+        else if (strcmp(A, "papel") == 0 && strcmp(B, "papel") == 0)
+        {
+            printf("Ambos venceram\n");
+        }
+        else if (strcmp(A, "ataque") == 0)
+        {
+            printf("Jogador 1 venceu\n");
+        }
+        else if (strcmp(B, "ataque") == 0)
+        {
             printf("Jogador 2 venceu\n");
-
+        }
+        else if (strcmp(A, "pedra") == 0)
+        {
+            printf("Jogador 1 venceu\n");
+        }
+        else if (strcmp(B, "pedra") == 0)
+        {
+            printf("Jogador 2 venceu\n");
+        }
     }
+
     return 0;
-
-
-
 }
-
-
-
